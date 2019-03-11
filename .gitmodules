@@ -1,0 +1,3 @@
+[submodule "immerse"]
+	path = immerse
+	url = git@github.com:Quansight/mapd-immerse.git
