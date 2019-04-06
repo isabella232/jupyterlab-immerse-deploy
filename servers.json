@@ -1,0 +1,9 @@
+[
+  {
+    "database": "mapd",
+    "master": true,
+    "url": "http://localhost:9092",
+    "password": "HyperInteractive",
+    "username": "mapd"
+  }
+]
