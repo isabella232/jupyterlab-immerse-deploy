@@ -18,7 +18,6 @@ RUN conda env update -n base -f /tmp/environment.yml
 RUN git clone --branch connection-manager https://github.com/Quansight/jupyterlab-omnisci.git
 WORKDIR jupyterlab-omnisci
 RUN jlpm install && jlpm build && jupyter labextension install && pip install -e .
-WORKDIR /
 
 
 ######################################################
@@ -30,7 +29,6 @@ WORKDIR jupyter-immerse
 RUN jlpm install && jlpm build && jupyter labextension install && pip install -e .
 # Enable the immerse server.
 RUN jupyter serverextension enable jupyter_immerse
-WORKDIR /
 
 
 ##################
@@ -47,8 +45,8 @@ RUN npm install -g yarn
 RUN sed -i -e 's|ssh://git@|https://|g' package.json
 RUN yarn install
 RUN yarn build:dev
-WORKDIR /
 
 
 RUN echo "$NB_USER ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/notebook
+RUN fix-permissions $CONDA_DIR && fix-permissions /home/$NB_USER
 USER $NB_USER
