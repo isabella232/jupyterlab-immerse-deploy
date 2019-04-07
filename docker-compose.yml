@@ -5,6 +5,10 @@ services:
       context: .
     environment:
       - JUPYTER_ENABLE_LAB='true'
-    command: start-notebook.sh --ImmerseConfig.immerse_dir=/immerse/dist --NotebookApp.notebook_dir=/home/jovyan
+    command: start-notebook.sh --ImmerseConfig.immerse_dir=/home/jovyan/immerse/dist --NotebookApp.notebook_dir=/home/jovyan --NotebookApp.token=''
     ports:
       - "8888:8888"
+  omnisci:
+    image: mapd/mapd-ce-cpu
+    ports:
+      - "9092:9092"
