@@ -1,0 +1,10 @@
+version: "3"
+services:
+  jupyter:
+    build:
+      context: .
+    environment:
+      - JUPYTER_ENABLE_LAB='true'
+    command: start-notebook.sh --ImmerseConfig.immerse_dir=/immerse/dist
+    ports:
+      - "8888:8888"
