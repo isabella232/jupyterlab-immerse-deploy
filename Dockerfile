@@ -40,19 +40,23 @@ RUN jupyter serverextension enable jupyter_immerse
 
 WORKDIR $HOME
 COPY immerse immerse
-# Workaround for bug in yarn: yarnpkg/yarn#6081
+# Workaround for bug in yarn: yarnpkg/yarn#6081.
 COPY .git .git
-# Copy our custom webpack config and servers into the immerse project
+# Copy our custom webpack config and servers into the immerse project.
 COPY webpack.config.custom.js immerse/
-COPY servers.json immers/src/
+COPY servers.json immerse/src/
+# Fix up permissions so we can edit as user.
+USER root
+RUN fix-permissions immerse
+USER $NB_USER
 WORKDIR immerse/
 RUN npm install -g yarn
-# use http node urls instead of git since we don't have key
+# Use http node urls instead of git since we don't have SSH key.
 RUN sed -i -e 's|ssh://git@|https://|g' package.json
 RUN yarn install
 RUN yarn build:dev
 
 
-USER ROOT
+USER root
 RUN echo "$NB_USER ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/notebook
 USER $NB_USER
