@@ -35,7 +35,7 @@ Vega/Vega-lite, Altair, and pymapd. You can also form SQL queries with the SQL e
 
 If at some point you want to make an Immerse dashboard, you can click on the
 `OmniSci Immerse` button in the JupyterLab launcher.
-This should take you to Immerse, and auto-log-in using the credentials specified in `[servers.json](./serers.json)`.
+This should take you to Immerse, and auto-log-in using the credentials specified in [`servers.json`](./servers.json).
 At this point, you should see something like this:
 
 ![immerse-intro](images/immerse-intro.png)
