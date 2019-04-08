@@ -1,8 +1,44 @@
 [
   {
     "database": "mapd",
-    "master": true,
+    "master": false,
     "url": "http://localhost:9092",
+    "password": "HyperInteractive",
+    "username": "mapd"
+  },
+  {
+    "GTM": "GTM-5SWDG4",
+    "customStyles": {
+      "title": "OmniSci | Data Visualization Example / Demo: Shipping Traffic Demo"
+    },
+    "database": "mapd",
+    "host": "ships-demo-local.mapd.com",
+    "loadDashboard": "8",
+    "master": true,
+    "password": "HyperInteractive",
+    "username": "demouser"
+  },
+  {
+    "GTM": "GTM-5SWDG4",
+    "customStyles": {
+      "title": "OmniSci | Data Visualization Example / Demo: US Census Data"
+    },
+    "database": "mapd",
+    "host": "census-ms.mapd.com",
+    "loadDashboard": 3,
+    "master": false,
+    "password": "HyperInteractive",
+    "username": "mapd"
+  },
+  {
+    "GTM": "GTM-5SWDG4",
+    "customStyles": {
+      "title": "OmniSci | Data Visualization Example / Demo: NBA Shots Data"
+    },
+    "database": "mapd",
+    "host": "nba-demo.mapd.com",
+    "loadDashboard": 2,
+    "master": false,
     "password": "HyperInteractive",
     "username": "mapd"
   }
