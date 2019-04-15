@@ -110,8 +110,8 @@ dependencies:
     - jsonschema==3.0.1
     - jupyter-client==5.2.4
     - jupyter-core==4.4.0
-    - jupyterlab==1.0.0a1
-    - jupyterlab-server==0.2.0
+    - jupyterlab==1.0.0a3
+    - jupyterlab-server==0.3.0
     - markupsafe==1.1.1
     - mistune==0.8.4
     - multipledispatch==0.6.0

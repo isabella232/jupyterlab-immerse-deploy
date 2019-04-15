@@ -23,12 +23,12 @@ RUN jlpm install && jlpm build && jupyter labextension install && pip install -e
 
 
 ######################################################
-# Build and install the jupyter-immerse extension #
+# Build and install the jupyterlab-immerse extension #
 ######################################################
 
 WORKDIR $HOME
-RUN git clone --branch master https://github.com/Quansight/jupyter-immerse.git
-WORKDIR jupyter-immerse
+RUN git clone --branch master https://github.com/Quansight/jupyterlab-immerse.git
+WORKDIR jupyterlab-immerse
 RUN jlpm install && jlpm build && jupyter labextension install && pip install -e .
 # Enable the immerse server.
 RUN jupyter serverextension enable jupyter_immerse
