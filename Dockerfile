@@ -17,7 +17,7 @@ RUN conda env update -n base -f environment.yml
 ######################################################
 
 WORKDIR $HOME
-RUN git clone --branch connection-manager https://github.com/Quansight/jupyterlab-omnisci.git
+RUN git clone --branch master https://github.com/Quansight/jupyterlab-omnisci.git
 WORKDIR jupyterlab-omnisci
 RUN jlpm install && jlpm build && jupyter labextension install && pip install -e .
 
@@ -31,7 +31,7 @@ RUN git clone --branch master https://github.com/Quansight/jupyterlab-immerse.gi
 WORKDIR jupyterlab-immerse
 RUN jlpm install && jlpm build && jupyter labextension install && pip install -e .
 # Enable the immerse server.
-RUN jupyter serverextension enable jupyter_immerse
+RUN jupyter serverextension enable jupyterlab_immerse
 
 
 ##################
